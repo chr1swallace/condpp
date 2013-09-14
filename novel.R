@@ -32,3 +32,6 @@ for(i in 1:nrow(regions)) {
 results <- do.call("rbind",results)
 results <- as.data.frame(results)
 results$cp.multi <- results$pp.multi.H12/(results$pp.multi.H1 + results$pp.multi.H12)
+
+results <- cbind(regions,results)
+results[,c("index.snp","disease","q0","p1","p2","N0","N1","N2","cp.multi")]
